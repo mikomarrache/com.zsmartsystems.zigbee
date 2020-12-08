@@ -15,7 +15,6 @@ import com.zsmartsystems.zigbee.ZigBeeEndpoint;
 import com.zsmartsystems.zigbee.ZigBeeNetworkManager;
 import com.zsmartsystems.zigbee.ZigBeeNode;
 import com.zsmartsystems.zigbee.zcl.clusters.ZclLevelControlCluster;
-import com.zsmartsystems.zigbee.zcl.clusters.ZclOnOffCluster;
 import com.zsmartsystems.zigbee.zcl.clusters.levelcontrol.MoveToLevelCommand;
 
 /**
@@ -66,7 +65,7 @@ public class ZigBeeConsoleSwitchLevelCommand extends ZigBeeConsoleAbstractComman
         } else {
             ZigBeeEndpoint endpoint = getEndpoint(networkManager, args[1]);
             ZclLevelControlCluster cluster = (ZclLevelControlCluster) endpoint
-                    .getInputCluster(ZclOnOffCluster.CLUSTER_ID);
+                    .getInputCluster(ZclLevelControlCluster.CLUSTER_ID);
             if (cluster != null) {
                 clusters.add(cluster);
             }
